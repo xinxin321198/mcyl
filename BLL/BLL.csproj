@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{15D54959-E0CE-491B-9C17-DAFFFAC09AFD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BLL</RootNamespace>
+    <AssemblyName>BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="Oracle.DataAccess, Version=4.112.4.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\app\Administrator\odac\odp.net\bin\4\Oracle.DataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\CommonBLL.cs" />
+    <Compile Include="Common\CommonBLLImp.cs" />
+    <Compile Include="JC\ICD10\ICD10BLL.cs" />
+    <Compile Include="JC\ICD10\ICD10BLLImp.cs" />
+    <Compile Include="JC\代码\CodeBLL.cs" />
+    <Compile Include="JC\代码\CodeBLLImp.cs" />
+    <Compile Include="JC\发票领用管理\FplyBLL.cs" />
+    <Compile Include="JC\发票领用管理\FplyBLLImp.cs" />
+    <Compile Include="JC\基础_ICD10\Jc_icd10BLL.cs" />
+    <Compile Include="JC\基础_ICD10\Jc_icd10BLLImp.cs" />
+    <Compile Include="JC\基础_ICD10编码对应疾病类型\Jc_icd10_relationBLL.cs" />
+    <Compile Include="JC\基础_ICD10编码对应疾病类型\Jc_icd10_relationBLLImp.cs" />
+    <Compile Include="JC\基础_IDC10疾病种类\Jc_icd10_typeBLL.cs" />
+    <Compile Include="JC\基础_IDC10疾病种类\Jc_icd10_typeBLLImp.cs" />
+    <Compile Include="JC\基础_代码字典\Jc_codeBLL.cs" />
+    <Compile Include="JC\基础_代码字典\Jc_codeBLLImp.cs" />
+    <Compile Include="JC\基础_代码类型字典\Jc_code_typeBLL.cs" />
+    <Compile Include="JC\基础_代码类型字典\Jc_code_typeBLLImp.cs" />
+    <Compile Include="JC\基础_供应商\Jc_gysBLL.cs" />
+    <Compile Include="JC\基础_供应商\Jc_gysBLLImp.cs" />
+    <Compile Include="JC\基础_发票领用管理\Jc_fplyBLL.cs" />
+    <Compile Include="JC\基础_发票领用管理\Jc_fplyBLLImp.cs" />
+    <Compile Include="JC\基础_居民\Jc_jmBLL.cs" />
+    <Compile Include="JC\基础_居民\Jc_jmBLLImp.cs" />
+    <Compile Include="JC\基础_工作人员\Jc_renyuanBLL.cs" />
+    <Compile Include="JC\基础_工作人员\Jc_renyuanBLLImp.cs" />
+    <Compile Include="JC\基础_工作人员所属科室关系\Jc_ry_ksBLL.cs" />
+    <Compile Include="JC\基础_工作人员所属科室关系\Jc_ry_ksBLLImp.cs" />
+    <Compile Include="JC\基础_工作人员账户关系表\Jc_renyuan_userBLL.cs" />
+    <Compile Include="JC\基础_工作人员账户关系表\Jc_renyuan_userBLLImp.cs" />
+    <Compile Include="JC\基础_用户登录日志\Jc_loginBLL.cs" />
+    <Compile Include="JC\基础_用户登录日志\Jc_loginBLLImp.cs" />
+    <Compile Include="JC\基础_科室\Jc_kswhBLL.cs" />
+    <Compile Include="JC\基础_科室\Jc_kswhBLLImp.cs" />
+    <Compile Include="JC\基础_药品字典\Jc_ypBLL.cs" />
+    <Compile Include="JC\基础_药品字典\Jc_ypBLLImp.cs" />
+    <Compile Include="JC\基础_行政区划\Jc_areaBLL.cs" />
+    <Compile Include="JC\基础_行政区划\Jc_areaBLLImp.cs" />
+    <Compile Include="JC\工作人员\RenyuanBLL.cs" />
+    <Compile Include="JC\工作人员\RenyuanBLLImp.cs" />
+    <Compile Include="JC\行政区划\AreaBLL.cs" />
+    <Compile Include="JC\行政区划\AreaBLLImp.cs" />
+    <Compile Include="MZ\门诊\MzBLL.cs" />
+    <Compile Include="MZ\门诊\MzBLLImp.cs" />
+    <Compile Include="MZ\门诊_医嘱\Mz_yzBLL.cs" />
+    <Compile Include="MZ\门诊_医嘱\Mz_yzBLLImp.cs" />
+    <Compile Include="MZ\门诊_挂号\Mz_ghBLL.cs" />
+    <Compile Include="MZ\门诊_挂号\Mz_ghBLLImp.cs" />
+    <Compile Include="MZ\门诊_病历\Mz_blBLL.cs" />
+    <Compile Include="MZ\门诊_病历\Mz_blBLLImp.cs" />
+    <Compile Include="MZ\门诊_病历诊断\Mz_blzdBLL.cs" />
+    <Compile Include="MZ\门诊_病历诊断\Mz_blzdBLLImp.cs" />
+    <Compile Include="RBAC\RBAC_用户\Rbac_userBLL.cs" />
+    <Compile Include="RBAC\RBAC_用户\Rbac_userBLLImp.cs" />
+    <Compile Include="JC\基础_诊疗项目管理\Jc_zlxmBLL.cs" />
+    <Compile Include="JC\基础_诊疗项目管理\Jc_zlxmBLLImp.cs" />
+    <Compile Include="RBAC\RBAC_模块\Rbac_modulesBLL.cs" />
+    <Compile Include="RBAC\RBAC_模块\Rbac_modulesBLLImp.cs" />
+    <Compile Include="RBAC\RBAC_用户角色关系\Rbac_user_roleBLL.cs" />
+    <Compile Include="RBAC\RBAC_用户角色关系\Rbac_user_roleBLLImp.cs" />
+    <Compile Include="RBAC\RBAC_角色\Rbac_roleBLL.cs" />
+    <Compile Include="RBAC\RBAC_角色\Rbac_roleBLLImp.cs" />
+    <Compile Include="RBAC\RBAC_角色模块关系\Rbac_role_modulesBLL.cs" />
+    <Compile Include="RBAC\RBAC_角色模块关系\Rbac_role_modulesBLLImp.cs" />
+    <Compile Include="RBAC\权限\PermissionsBLL.cs" />
+    <Compile Include="RBAC\权限\PermissionsBLLImp.cs" />
+    <Compile Include="YPKC\药品入库\Ypkc_RuKuBLL.cs" />
+    <Compile Include="YPKC\药品入库\Ypkc_RuKuBLLImp.cs" />
+    <Compile Include="YPKC\药品库存\YpkcBLL.cs" />
+    <Compile Include="YPKC\药品库存\YpkcBLLImp.cs" />
+    <Compile Include="YPKC\药品库存_单据主表\Ypkc_djBLL.cs" />
+    <Compile Include="YPKC\药品库存_单据主表\Ypkc_djBLLImp.cs" />
+    <Compile Include="YPKC\药品库存_单据子表\Ypkc_djmxBLL.cs" />
+    <Compile Include="YPKC\药品库存_单据子表\Ypkc_djmxBLLImp.cs" />
+    <Compile Include="YPKC\药品库存_库存表\Ypkc_kcBLL.cs" />
+    <Compile Include="YPKC\药品库存_库存表\Ypkc_kcBLLImp.cs" />
+    <Compile Include="YPKC\药品调拨\Ypkc_DiaoBoBLL.cs" />
+    <Compile Include="YPKC\药品调拨\Ypkc_DiaoBoBLLImp.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="YW\登录\LoginBLL.cs" />
+    <Compile Include="YW\登录\LoginBLLImp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{03a03dd1-f19d-4d21-9c82-1a81424c5855}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{58824eb0-dcb3-4638-ab50-d5e1c037df31}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

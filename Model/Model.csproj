@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{58824EB0-DCB3-4638-AB50-D5E1C037DF31}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Model</RootNamespace>
+    <AssemblyName>Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NPOI, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BaseModel.cs" />
+    <Compile Include="Common\AppConfigHelper.cs" />
+    <Compile Include="Common\CommonCode.cs" />
+    <Compile Include="Common\GUIDHelper.cs" />
+    <Compile Include="Common\IPHelper.cs" />
+    <Compile Include="Common\LoginModel.cs" />
+    <Compile Include="Common\MD5Helper.cs" />
+    <Compile Include="Common\NpoiHelper.cs" />
+    <Compile Include="Common\PageInfo.cs" />
+    <Compile Include="Common\PinYinConverter.cs" />
+    <Compile Include="Common\SortInfo.cs" />
+    <Compile Include="Common\StringHelper.cs" />
+    <Compile Include="Common\TimeHelper.cs" />
+    <Compile Include="Common\WuBiConverter.cs" />
+    <Compile Include="JC\Jc_area.cs" />
+    <Compile Include="JC\Jc_code.cs" />
+    <Compile Include="JC\Jc_code_type.cs" />
+    <Compile Include="JC\Jc_fply.cs" />
+    <Compile Include="JC\Jc_gys.cs" />
+    <Compile Include="JC\Jc_icd10.cs" />
+    <Compile Include="JC\Jc_icd10_relation.cs" />
+    <Compile Include="JC\Jc_icd10_type.cs" />
+    <Compile Include="JC\Jc_jm.cs" />
+    <Compile Include="JC\Jc_kswh.cs" />
+    <Compile Include="JC\Jc_login.cs" />
+    <Compile Include="JC\Jc_renyuan.cs" />
+    <Compile Include="JC\Jc_renyuan_user.cs" />
+    <Compile Include="JC\Jc_ry_ks.cs" />
+    <Compile Include="JC\Jc_yp.cs" />
+    <Compile Include="JC\Jc_zlxm.cs" />
+    <Compile Include="MZ\Mz_bl.cs" />
+    <Compile Include="MZ\Mz_blzd.cs" />
+    <Compile Include="MZ\Mz_gh.cs" />
+    <Compile Include="MZ\Mz_yz.cs" />
+    <Compile Include="YPKC\Ypkc_dj.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RBAC\Rbac_modules.cs" />
+    <Compile Include="RBAC\Rbac_role.cs" />
+    <Compile Include="RBAC\Rbac_role_modules.cs" />
+    <Compile Include="RBAC\Rbac_user.cs" />
+    <Compile Include="RBAC\Rbac_user_role.cs" />
+    <Compile Include="YPKC\Ypkc_djmx.cs" />
+    <Compile Include="YPKC\Ypkc_kc.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL\CSkin.dll" />
+    <Content Include="DLL\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="DLL\NPOI.dll" />
+    <Content Include="DLL\NPOI.OOXML.dll" />
+    <Content Include="DLL\NPOI.OpenXml4Net.dll" />
+    <Content Include="DLL\NPOI.OpenXmlFormats.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

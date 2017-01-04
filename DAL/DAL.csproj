@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{03A03DD1-F19D-4D21-9C82-1A81424C5855}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Oracle.DataAccess, Version=4.112.4.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\app\Administrator\odac\odp.net\bin\4\Oracle.DataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseDAL\BasDAL.cs" />
+    <Compile Include="Common\OracleHelper.cs" />
+    <Compile Include="Common\sqlHelper.cs" />
+    <Compile Include="Common\SqlHelper_sufei.cs" />
+    <Compile Include="JC\基础_ICD10\Jc_icd10DAL.cs" />
+    <Compile Include="JC\基础_ICD10\Jc_icd10DALImp.cs" />
+    <Compile Include="JC\基础_ICD10编码对应疾病类型\Jc_icd10_relationDAL.cs" />
+    <Compile Include="JC\基础_ICD10编码对应疾病类型\Jc_icd10_relationDALImp.cs" />
+    <Compile Include="JC\基础_IDC10疾病种类\Jc_icd10_typeDAL.cs" />
+    <Compile Include="JC\基础_IDC10疾病种类\Jc_icd10_typeDALImp.cs" />
+    <Compile Include="JC\基础_代码字典\Jc_codeDAL.cs" />
+    <Compile Include="JC\基础_代码字典\Jc_codeDALImp.cs" />
+    <Compile Include="JC\基础_代码类型字典\Jc_code_typeDAL.cs" />
+    <Compile Include="JC\基础_代码类型字典\Jc_code_typeDALImp.cs" />
+    <Compile Include="JC\基础_供应商\Jc_gysDAL.cs" />
+    <Compile Include="JC\基础_供应商\Jc_gysDALImp.cs" />
+    <Compile Include="JC\基础_发票领用管理\Jc_fplyDAL.cs" />
+    <Compile Include="JC\基础_发票领用管理\Jc_fplyDALImp.cs" />
+    <Compile Include="JC\基础_居民\Jc_jmDAL.cs" />
+    <Compile Include="JC\基础_居民\Jc_jmDALImp.cs" />
+    <Compile Include="JC\基础_工作人员\Jc_renyuanDAL.cs" />
+    <Compile Include="JC\基础_工作人员\Jc_renyuanDALImp.cs" />
+    <Compile Include="JC\基础_工作人员所属科室关系\Jc_ry_ksDAL.cs" />
+    <Compile Include="JC\基础_工作人员所属科室关系\Jc_ry_ksDALImp.cs" />
+    <Compile Include="JC\基础_工作人员账户关系表\Jc_renyuan_userDAL.cs" />
+    <Compile Include="JC\基础_工作人员账户关系表\Jc_renyuan_userDALImp.cs" />
+    <Compile Include="JC\基础_用户登录日志\Jc_loginDAL.cs" />
+    <Compile Include="JC\基础_用户登录日志\Jc_loginDALImp.cs" />
+    <Compile Include="JC\基础_科室\Jc_kswhDAL.cs" />
+    <Compile Include="JC\基础_科室\Jc_kswhDALImp.cs" />
+    <Compile Include="JC\基础_药品字典\Jc_ypDAL.cs" />
+    <Compile Include="JC\基础_药品字典\Jc_ypDALImp.cs" />
+    <Compile Include="JC\基础_行政区划\Jc_areaDAL.cs" />
+    <Compile Include="JC\基础_行政区划\Jc_areaDALImp.cs" />
+    <Compile Include="JC\基础_诊疗项目管理\Jc_zlxmDAL.cs" />
+    <Compile Include="JC\基础_诊疗项目管理\Jc_zlxmDALImp.cs" />
+    <Compile Include="MZ\门诊_医嘱\Mz_yzDAL.cs" />
+    <Compile Include="MZ\门诊_医嘱\Mz_yzDALImp.cs" />
+    <Compile Include="MZ\门诊_挂号\Mz_ghDAL.cs" />
+    <Compile Include="MZ\门诊_挂号\Mz_ghDALImp.cs" />
+    <Compile Include="MZ\门诊_病历\Mz_blDAL.cs" />
+    <Compile Include="MZ\门诊_病历\Mz_blDALImp.cs" />
+    <Compile Include="MZ\门诊_病历诊断\Mz_blzdDAL.cs" />
+    <Compile Include="MZ\门诊_病历诊断\Mz_blzdDALImp.cs" />
+    <Compile Include="RBAC\RBAC_模块\Rbac_modulesDAL.cs" />
+    <Compile Include="RBAC\RBAC_模块\Rbac_modulesDALImp.cs" />
+    <Compile Include="RBAC\RBAC_用户角色关系\Rbac_user_roleDAL.cs" />
+    <Compile Include="RBAC\RBAC_用户角色关系\Rbac_user_roleDALImp.cs" />
+    <Compile Include="RBAC\RBAC_角色\Rbac_roleDAL.cs" />
+    <Compile Include="RBAC\RBAC_角色\Rbac_roleDALImp.cs" />
+    <Compile Include="RBAC\RBAC_角色模块关系\Rbac_role_modulesDAL.cs" />
+    <Compile Include="RBAC\RBAC_角色模块关系\Rbac_role_modulesDALImp.cs" />
+    <Compile Include="RBAC\RNAC_用户\Rbac_userDAL.cs" />
+    <Compile Include="RBAC\RNAC_用户\Rbac_userDALImp.cs" />
+    <Compile Include="YPKC\药品库存_单据主表\Ypkc_djDAL.cs" />
+    <Compile Include="YPKC\药品库存_单据主表\Ypkc_djDALImp.cs" />
+    <Compile Include="YPKC\药品库存_单据子表\Ypkc_djmxDAL.cs" />
+    <Compile Include="YPKC\药品库存_单据子表\Ypkc_djmxDALImp.cs" />
+    <Compile Include="YPKC\药品库存_库存表\Ypkc_kcDAL.cs" />
+    <Compile Include="YPKC\药品库存_库存表\Ypkc_kcDALImp.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{58824eb0-dcb3-4638-ab50-d5e1c037df31}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

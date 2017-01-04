@@ -1,0 +1,943 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{50208A42-651C-4DD9-AC7E-A56A4552EE19}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>client</RootNamespace>
+    <AssemblyName>client</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSkin">
+      <HintPath>..\Model\DLL\CSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\Model\DLL\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Model\DLL\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Model\DLL\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Model\DLL\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Model\DLL\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=4.112.4.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\app\Administrator\odac\odp.net\bin\4\Oracle.DataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\ComboBoxHelper.cs" />
+    <Compile Include="Common\DateTimePickerHelper.cs" />
+    <Compile Include="Common\FormHelper.cs" />
+    <Compile Include="Common\LabelHelper.cs" />
+    <Compile Include="Common\NumericUpDownHelper.cs" />
+    <Compile Include="Common\OpenFileDialogHelper.cs" />
+    <Compile Include="Common\MyMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\MyMessageBox.Designer.cs">
+      <DependentUpon>MyMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SkinButtonHelper.cs" />
+    <Compile Include="Common\SkinDataGridViewHelper.cs" />
+    <Compile Include="Common\SkinListViewHelper.cs" />
+    <Compile Include="Common\SkinPanelHelper.cs" />
+    <Compile Include="Common\SkinRadioButtonHelper.cs" />
+    <Compile Include="Common\SkinSplitContainerHelper.cs" />
+    <Compile Include="Common\SkinTabControlHelper.cs" />
+    <Compile Include="Common\TextBoxHelper.cs" />
+    <Compile Include="Common\TreeViewHelper.cs" />
+    <Compile Include="JC\代码字典管理\CodeImportForExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\代码字典管理\CodeImportForExcel.Designer.cs">
+      <DependentUpon>CodeImportForExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\代码字典管理\CodeSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\代码字典管理\CodeSearch.Designer.cs">
+      <DependentUpon>CodeSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\供应商\GysEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\供应商\GysEdit.Designer.cs">
+      <DependentUpon>GysEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\供应商\GysMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\供应商\GysMgr.Designer.cs">
+      <DependentUpon>GysMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\供应商\GysSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\供应商\GysSearch.Designer.cs">
+      <DependentUpon>GysSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\发票管理\FplyEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\发票管理\FplyEdit.Designer.cs">
+      <DependentUpon>FplyEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\发票管理\FplyMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\发票管理\FplyMgr.Designer.cs">
+      <DependentUpon>FplyMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\基础_ICD10国际疾病分类管理\ICD10Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\基础_ICD10国际疾病分类管理\ICD10Edit.Designer.cs">
+      <DependentUpon>ICD10Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\基础_ICD10国际疾病分类管理\ICD10ImportForExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\基础_ICD10国际疾病分类管理\ICD10ImportForExcel.Designer.cs">
+      <DependentUpon>ICD10ImportForExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\基础_ICD10国际疾病分类管理\ICD10Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\基础_ICD10国际疾病分类管理\ICD10Search.Designer.cs">
+      <DependentUpon>ICD10Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\基础_ICD10国际疾病分类管理\ICD10TypeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\基础_ICD10国际疾病分类管理\ICD10TypeEdit.Designer.cs">
+      <DependentUpon>ICD10TypeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\基础_ICD10国际疾病分类管理\ICD10TypeImportForExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\基础_ICD10国际疾病分类管理\ICD10TypeImportForExcel.Designer.cs">
+      <DependentUpon>ICD10TypeImportForExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\基础_ICD10国际疾病分类管理\ICD10TypeMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\基础_ICD10国际疾病分类管理\ICD10TypeMgr.Designer.cs">
+      <DependentUpon>ICD10TypeMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\基础_ICD10国际疾病分类管理\ICD10TypeRelation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\基础_ICD10国际疾病分类管理\ICD10TypeRelation.Designer.cs">
+      <DependentUpon>ICD10TypeRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\基础_居民\JmEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\基础_居民\JmEdit.Designer.cs">
+      <DependentUpon>JmEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\基础_居民\JmMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\基础_居民\JmMgr.Designer.cs">
+      <DependentUpon>JmMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\基础_居民\JmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\基础_居民\JmSearch.Designer.cs">
+      <DependentUpon>JmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\工作人员管理\RenyuanSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\工作人员管理\RenyuanSearch.Designer.cs">
+      <DependentUpon>RenyuanSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\工作人员管理\RenyuanUserRelation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\工作人员管理\RenyuanUserRelation.Designer.cs">
+      <DependentUpon>RenyuanUserRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\登录日志管理\LoginMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\登录日志管理\LoginMgr.Designer.cs">
+      <DependentUpon>LoginMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\药品管理\YpSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\药品管理\YpSearch.Designer.cs">
+      <DependentUpon>YpSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\行政区划管理\AreaMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\行政区划管理\AreaMgr.Designer.cs">
+      <DependentUpon>AreaMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\代码字典管理\CodeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\代码字典管理\CodeEdit.Designer.cs">
+      <DependentUpon>CodeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\代码字典管理\CodeMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\代码字典管理\CodeMgr.Designer.cs">
+      <DependentUpon>CodeMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\科室管理\KswhMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\科室管理\KswhMgr.Designer.cs">
+      <DependentUpon>KswhMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\诊疗项目管理\ZlxmEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\诊疗项目管理\ZlxmEdit.Designer.cs">
+      <DependentUpon>ZlxmEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\诊疗项目管理\ZlxmMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\诊疗项目管理\ZlxmMgr.Designer.cs">
+      <DependentUpon>ZlxmMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\诊疗项目管理\ZlxmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\诊疗项目管理\ZlxmSearch.Designer.cs">
+      <DependentUpon>ZlxmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginKeshiSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginKeshiSelect.Designer.cs">
+      <DependentUpon>LoginKeshiSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MZ\门诊划价收费\MzHjFast_gh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MZ\门诊划价收费\MzHjFast_gh.Designer.cs">
+      <DependentUpon>MzHjFast_gh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MZ\门诊划价收费\Mzhjsf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MZ\门诊划价收费\Mzhjsf.Designer.cs">
+      <DependentUpon>Mzhjsf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MZ\门诊医生站\MzFast_gh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MZ\门诊医生站\MzFast_gh.designer.cs">
+      <DependentUpon>MzFast_gh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MZ\门诊医生站\MzYs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MZ\门诊医生站\MzYs.designer.cs">
+      <DependentUpon>MzYs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MZ\门诊处方收费\Mzcfsf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MZ\门诊处方收费\Mzcfsf.Designer.cs">
+      <DependentUpon>Mzcfsf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MZ\门诊挂号\Chaxun_tuihao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MZ\门诊挂号\Chaxun_tuihao.Designer.cs">
+      <DependentUpon>Chaxun_tuihao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MZ\门诊挂号\Mzgh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MZ\门诊挂号\Mzgh.Designer.cs">
+      <DependentUpon>Mzgh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MZ\门诊药房\Mzyf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MZ\门诊药房\Mzyf.Designer.cs">
+      <DependentUpon>Mzyf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RBAC\模块管理\ModulesMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RBAC\模块管理\ModulesMgr.Designer.cs">
+      <DependentUpon>ModulesMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RBAC\登录用户管理\UserEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RBAC\登录用户管理\UserEdit.Designer.cs">
+      <DependentUpon>UserEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RBAC\登录用户管理\UserMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RBAC\登录用户管理\UserMgr.Designer.cs">
+      <DependentUpon>UserMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RBAC\登录用户管理\UserRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RBAC\登录用户管理\UserRole.Designer.cs">
+      <DependentUpon>UserRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RBAC\角色管理\RoleMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RBAC\角色管理\RoleMgr.Designer.cs">
+      <DependentUpon>RoleMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RBAC\角色管理\RoleModulesRelation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RBAC\角色管理\RoleModulesRelation.Designer.cs">
+      <DependentUpon>RoleModulesRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sample.Designer.cs">
+      <DependentUpon>Sample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YPKC\Common\YpkcCommon.cs" />
+    <Compile Include="YPKC\Common\YpKuCunLxSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YPKC\Common\YpKuCunLxSelect.Designer.cs">
+      <DependentUpon>YpKuCunLxSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YPKC\药品库存\YpKuCunMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YPKC\药品库存\YpKuCunMgr.Designer.cs">
+      <DependentUpon>YpKuCunMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YPKC\药品库存\YpKuCunSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YPKC\药品库存\YpKuCunSearch.Designer.cs">
+      <DependentUpon>YpKuCunSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YPKC\药品库存\YpKuCunSearchForYz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YPKC\药品库存\YpKuCunSearchForYz.Designer.cs">
+      <DependentUpon>YpKuCunSearchForYz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YPKC\药品报损\YpbsEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YPKC\药品报损\YpbsEdit.Designer.cs">
+      <DependentUpon>YpbsEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YPKC\药品报损\YpbsMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YPKC\药品报损\YpbsMgr.Designer.cs">
+      <DependentUpon>YpbsMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YPKC\药品盘点\YppdEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YPKC\药品盘点\YppdEdit.Designer.cs">
+      <DependentUpon>YppdEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YPKC\药品盘点\YppdMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YPKC\药品盘点\YppdMgr.Designer.cs">
+      <DependentUpon>YppdMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YPKC\药品调拨\YpdbEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YPKC\药品调拨\YpdbEdit.Designer.cs">
+      <DependentUpon>YpdbEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YPKC\药品调拨\YpdbMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YPKC\药品调拨\YpdbMgr.Designer.cs">
+      <DependentUpon>YpdbMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YPKC\药品退货\YpthEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YPKC\药品退货\YpthEdit.Designer.cs">
+      <DependentUpon>YpthEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YPKC\药品退货\YpthMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YPKC\药品退货\YpthMgr.Designer.cs">
+      <DependentUpon>YpthMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YPKC\药品入库\YpRuKuEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YPKC\药品入库\YpRuKuEdit.Designer.cs">
+      <DependentUpon>YpRuKuEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YPKC\药品入库\YpRuKuMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YPKC\药品入库\YpRuKuMgr.Designer.cs">
+      <DependentUpon>YpRuKuMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="JC\工作人员管理\RenyuanEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\工作人员管理\RenyuanEdit.Designer.cs">
+      <DependentUpon>RenyuanEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\工作人员管理\RenYuanKeShiRelation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\工作人员管理\RenYuanKeShiRelation.Designer.cs">
+      <DependentUpon>RenYuanKeShiRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\工作人员管理\RenYuanMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\工作人员管理\RenYuanMgr.Designer.cs">
+      <DependentUpon>RenYuanMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\药品管理\YpEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\药品管理\YpEdit.Designer.cs">
+      <DependentUpon>YpEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JC\药品管理\YpMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JC\药品管理\YpMgr.Designer.cs">
+      <DependentUpon>YpMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YPKC\药品领用\YplyEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YPKC\药品领用\YplyEdit.Designer.cs">
+      <DependentUpon>YplyEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YPKC\药品领用\YplyMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YPKC\药品领用\YplyMgr.Designer.cs">
+      <DependentUpon>YplyMgr.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\MyMessageBox.resx">
+      <DependentUpon>MyMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\代码字典管理\CodeImportForExcel.resx">
+      <DependentUpon>CodeImportForExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\代码字典管理\CodeSearch.resx">
+      <DependentUpon>CodeSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\供应商\GysEdit.resx">
+      <DependentUpon>GysEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\供应商\GysMgr.resx">
+      <DependentUpon>GysMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\供应商\GysSearch.resx">
+      <DependentUpon>GysSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\发票管理\FplyEdit.resx">
+      <DependentUpon>FplyEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\发票管理\FplyMgr.resx">
+      <DependentUpon>FplyMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\基础_ICD10国际疾病分类管理\ICD10Edit.resx">
+      <DependentUpon>ICD10Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\基础_ICD10国际疾病分类管理\ICD10ImportForExcel.resx">
+      <DependentUpon>ICD10ImportForExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\基础_ICD10国际疾病分类管理\ICD10Search.resx">
+      <DependentUpon>ICD10Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\基础_ICD10国际疾病分类管理\ICD10TypeEdit.resx">
+      <DependentUpon>ICD10TypeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\基础_ICD10国际疾病分类管理\ICD10TypeImportForExcel.resx">
+      <DependentUpon>ICD10TypeImportForExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\基础_ICD10国际疾病分类管理\ICD10TypeMgr.resx">
+      <DependentUpon>ICD10TypeMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\基础_ICD10国际疾病分类管理\ICD10TypeRelation.resx">
+      <DependentUpon>ICD10TypeRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\基础_居民\JmEdit.resx">
+      <DependentUpon>JmEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\基础_居民\JmMgr.resx">
+      <DependentUpon>JmMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\基础_居民\JmSearch.resx">
+      <DependentUpon>JmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\工作人员管理\RenyuanSearch.resx">
+      <DependentUpon>RenyuanSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\工作人员管理\RenyuanUserRelation.resx">
+      <DependentUpon>RenyuanUserRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\登录日志管理\LoginMgr.resx">
+      <DependentUpon>LoginMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\药品管理\YpSearch.resx">
+      <DependentUpon>YpSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\行政区划管理\AreaMgr.resx">
+      <DependentUpon>AreaMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\代码字典管理\CodeEdit.resx">
+      <DependentUpon>CodeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\代码字典管理\CodeMgr.resx">
+      <DependentUpon>CodeMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\科室管理\KswhMgr.resx">
+      <DependentUpon>KswhMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\诊疗项目管理\ZlxmEdit.resx">
+      <DependentUpon>ZlxmEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\诊疗项目管理\ZlxmMgr.resx">
+      <DependentUpon>ZlxmMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\诊疗项目管理\ZlxmSearch.resx">
+      <DependentUpon>ZlxmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginKeshiSelect.resx">
+      <DependentUpon>LoginKeshiSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MZ\门诊划价收费\MzHjFast_gh.resx">
+      <DependentUpon>MzHjFast_gh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MZ\门诊划价收费\Mzhjsf.resx">
+      <DependentUpon>Mzhjsf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MZ\门诊医生站\MzFast_gh.resx">
+      <DependentUpon>MzFast_gh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MZ\门诊医生站\MzYs.resx">
+      <DependentUpon>MzYs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MZ\门诊处方收费\Mzcfsf.resx">
+      <DependentUpon>Mzcfsf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MZ\门诊挂号\Chaxun_tuihao.resx">
+      <DependentUpon>Chaxun_tuihao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MZ\门诊挂号\Mzgh.resx">
+      <DependentUpon>Mzgh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MZ\门诊药房\Mzyf.resx">
+      <DependentUpon>Mzyf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RBAC\模块管理\ModulesMgr.resx">
+      <DependentUpon>ModulesMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RBAC\登录用户管理\UserEdit.resx">
+      <DependentUpon>UserEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RBAC\登录用户管理\UserMgr.resx">
+      <DependentUpon>UserMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RBAC\登录用户管理\UserRole.resx">
+      <DependentUpon>UserRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RBAC\角色管理\RoleMgr.resx">
+      <DependentUpon>RoleMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RBAC\角色管理\RoleModulesRelation.resx">
+      <DependentUpon>RoleModulesRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample.resx">
+      <DependentUpon>Sample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YPKC\Common\YpKuCunLxSelect.resx">
+      <DependentUpon>YpKuCunLxSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YPKC\药品库存\YpKuCunMgr.resx">
+      <DependentUpon>YpKuCunMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YPKC\药品库存\YpKuCunSearch.resx">
+      <DependentUpon>YpKuCunSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YPKC\药品库存\YpKuCunSearchForYz.resx">
+      <DependentUpon>YpKuCunSearchForYz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YPKC\药品报损\YpbsEdit.resx">
+      <DependentUpon>YpbsEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YPKC\药品报损\YpbsMgr.resx">
+      <DependentUpon>YpbsMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YPKC\药品盘点\YppdEdit.resx">
+      <DependentUpon>YppdEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YPKC\药品盘点\YppdMgr.resx">
+      <DependentUpon>YppdMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YPKC\药品调拨\YpdbEdit.resx">
+      <DependentUpon>YpdbEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YPKC\药品调拨\YpdbMgr.resx">
+      <DependentUpon>YpdbMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YPKC\药品退货\YpthEdit.resx">
+      <DependentUpon>YpthEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YPKC\药品退货\YpthMgr.resx">
+      <DependentUpon>YpthMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YPKC\药品入库\YpRuKuEdit.resx">
+      <DependentUpon>YpRuKuEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YPKC\药品入库\YpRuKuMgr.resx">
+      <DependentUpon>YpRuKuMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\工作人员管理\RenyuanEdit.resx">
+      <DependentUpon>RenyuanEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\工作人员管理\RenYuanKeShiRelation.resx">
+      <DependentUpon>RenYuanKeShiRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\工作人员管理\RenYuanMgr.resx">
+      <DependentUpon>RenYuanMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\药品管理\YpEdit.resx">
+      <DependentUpon>YpEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JC\药品管理\YpMgr.resx">
+      <DependentUpon>YpMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YPKC\药品领用\YplyEdit.resx">
+      <DependentUpon>YplyEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YPKC\药品领用\YplyMgr.resx">
+      <DependentUpon>YplyMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="IrisSkins\Calmness.ssk" />
+    <None Include="IrisSkins\CalmnessColor1.ssk" />
+    <None Include="IrisSkins\CalmnessColor2.ssk" />
+    <None Include="IrisSkins\DeepCyan.ssk" />
+    <None Include="IrisSkins\DeepGreen.ssk" />
+    <None Include="IrisSkins\DeepOrange.ssk" />
+    <None Include="IrisSkins\DiamondBlue.ssk" />
+    <None Include="IrisSkins\DiamondGreen.ssk" />
+    <None Include="IrisSkins\DiamondOlive.ssk" />
+    <None Include="IrisSkins\DiamondPurple.ssk" />
+    <None Include="IrisSkins\DiamondRed.ssk" />
+    <None Include="IrisSkins\Eighteen.ssk" />
+    <None Include="IrisSkins\EighteenColor1.ssk" />
+    <None Include="IrisSkins\EighteenColor2.ssk" />
+    <None Include="IrisSkins\Emerald.ssk" />
+    <None Include="IrisSkins\EmeraldColor1.ssk" />
+    <None Include="IrisSkins\EmeraldColor2.ssk" />
+    <None Include="IrisSkins\EmeraldColor3.ssk" />
+    <None Include="IrisSkins\GlassBrown.ssk" />
+    <None Include="IrisSkins\GlassGreen.ssk" />
+    <None Include="IrisSkins\GlassOrange.ssk" />
+    <None Include="IrisSkins\Longhorn.ssk" />
+    <None Include="IrisSkins\MacOS.ssk" />
+    <None Include="IrisSkins\Midsummer.ssk" />
+    <None Include="IrisSkins\MidsummerColor1.ssk" />
+    <None Include="IrisSkins\MidsummerColor2.ssk" />
+    <None Include="IrisSkins\MidsummerColor3.ssk" />
+    <None Include="IrisSkins\mp10.ssk" />
+    <None Include="IrisSkins\mp10green.ssk" />
+    <None Include="IrisSkins\mp10maroon.ssk" />
+    <None Include="IrisSkins\mp10mulberry.ssk" />
+    <None Include="IrisSkins\mp10pink.ssk" />
+    <None Include="IrisSkins\mp10purple.ssk" />
+    <None Include="IrisSkins\MSN.ssk" />
+    <None Include="IrisSkins\office2007.ssk" />
+    <None Include="IrisSkins\OneBlue.ssk" />
+    <None Include="IrisSkins\OneCyan.ssk" />
+    <None Include="IrisSkins\OneGreen.ssk" />
+    <None Include="IrisSkins\OneOrange.ssk" />
+    <None Include="IrisSkins\Page.ssk" />
+    <None Include="IrisSkins\PageColor1.ssk" />
+    <None Include="IrisSkins\PageColor2.ssk" />
+    <None Include="IrisSkins\RealOne.ssk" />
+    <None Include="IrisSkins\Silver.ssk" />
+    <None Include="IrisSkins\SilverColor1.ssk" />
+    <None Include="IrisSkins\SilverColor2.ssk" />
+    <None Include="IrisSkins\SportsBlack.ssk" />
+    <None Include="IrisSkins\SportsBlue.ssk" />
+    <None Include="IrisSkins\SportsCyan.ssk" />
+    <None Include="IrisSkins\SportsGreen.ssk" />
+    <None Include="IrisSkins\SportsOrange.ssk" />
+    <None Include="IrisSkins\SteelBlack.ssk" />
+    <None Include="IrisSkins\SteelBlue.ssk" />
+    <None Include="IrisSkins\vista1.ssk" />
+    <None Include="IrisSkins\vista1_green.ssk" />
+    <None Include="IrisSkins\Vista2_color1.ssk" />
+    <None Include="IrisSkins\Vista2_color2.ssk" />
+    <None Include="IrisSkins\Vista2_color3.ssk" />
+    <None Include="IrisSkins\Vista2_color4.ssk" />
+    <None Include="IrisSkins\Vista2_color5.ssk" />
+    <None Include="IrisSkins\Vista2_color6.ssk" />
+    <None Include="IrisSkins\Vista2_color7.ssk" />
+    <None Include="IrisSkins\Warm.ssk" />
+    <None Include="IrisSkins\WarmColor1.ssk" />
+    <None Include="IrisSkins\WarmColor2.ssk" />
+    <None Include="IrisSkins\WarmColor3.ssk" />
+    <None Include="IrisSkins\Wave.ssk" />
+    <None Include="IrisSkins\WaveColor1.ssk" />
+    <None Include="IrisSkins\WaveColor2.ssk" />
+    <None Include="IrisSkins\XPBlue.ssk" />
+    <None Include="IrisSkins\XPGreen.ssk" />
+    <None Include="IrisSkins\XPOrange.ssk" />
+    <None Include="IrisSkins\XPSilver.ssk" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{15d54959-e0ce-491b-9c17-dafffac09afd}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{58824eb0-dcb3-4638-ab50-d5e1c037df31}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ico\main.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png\forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png\main.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png\register.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png\department.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png\administrator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png\cells.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png\Edge_Code.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png\map_location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png\money_gold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png\patient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png\prescription.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png\user_mapping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png\Invoice_money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png\main_right_panel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png\patient_treatment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Readme.txt" />
+    <Content Include="Resources\png\block_small.png" />
+    <Content Include="Resources\png\checkmark.png" />
+    <Content Include="Resources\png\delivery_ruku.png" />
+    <Content Include="Resources\png\mcyllogo.png" />
+    <Content Include="Resources\png\suppliers.png" />
+    <Content Include="Resources\png\system_diagnosis.png" />
+    <Content Include="拼音五笔转码表\CodeConfig\CodeConfig.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
