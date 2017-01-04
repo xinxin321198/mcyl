@@ -8,9 +8,12 @@
 ### 6.数据访问层考虑再三，最终也未使用任何ORM框架，之前考虑过微软的EF和第三方的Nhibernate
 ### 7.提供了一些常用工具类，比如：配置文件操作、GUID生成器、IP地址、MD5加密、NPOI操作excel、汉字转拼音、汉子转五笔、日期时间操作等
 
-[代码生成器](https://github.com/xinxin321198/mcylCodeGenerator)
+[基于C#的his系统](https://github.com/xinxin321198/mcyl/)<br/>
+[代码生成器](https://github.com/xinxin321198/mcylCodeGenerator)<br/>
+[文档](https://github.com/xinxin321198/mcylDoc)<br/>
 
 * 昵称：loserStar<br/>
 * email:xinxin321198@gmail.com<br/>
 * email2:362527240@qq.com<br/>
 * qq:362527240<br/>
+* github:https://github.com/xinxin321198<br/>
