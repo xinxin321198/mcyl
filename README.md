@@ -7,6 +7,8 @@
 ### 5.业务逻辑层和数据库访问层预留了接口->实现的方式，方便未来引入IOC相关框架进行各层之间解耦（但目前未引入任何IOC框架，故还是各层耦合）
 ### 6.数据访问层考虑再三，最终也未使用任何ORM框架，之前考虑过微软的EF和第三方的Nhibernate
 ### 7.提供了一些常用工具类，比如：配置文件操作、GUID生成器、IP地址、MD5加密、NPOI操作excel、汉字转拼音、汉子转五笔、日期时间操作等
+### 8.网络架构上计划使用WCF，实现以webservice的方式来进行客户端与服务端的通信（还未实现）
+
 
 [基于C#的his系统](https://github.com/xinxin321198/mcyl/)<br/>
 [代码生成器](https://github.com/xinxin321198/mcylCodeGenerator)<br/>
