@@ -9,6 +9,9 @@
 ### 7.提供了一些常用工具类，比如：配置文件操作、GUID生成器、IP地址、MD5加密、NPOI操作excel、汉字转拼音、汉子转五笔、日期时间操作等
 ### 8.网络架构上计划使用WCF，实现以webservice的方式来进行客户端与服务端的通信（还未实现）
 
+![image](./doc/img/14.png)
+![image](./doc/img/17.png)
+![image](./doc/img/34.png)
 
 [基于C#的his系统](https://github.com/xinxin321198/mcyl/)<br/>
 [代码生成器](https://github.com/xinxin321198/mcylCodeGenerator)<br/>
