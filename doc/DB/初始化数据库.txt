@@ -1,0 +1,57 @@
+oracle创建表空间
+
+注意点：
+
+1.如果在PL/SQL 等工具里打开的话，直接修改下面的代码中[斜体加粗部分]执行
+
+2.确保路径存在，比如【D:\oracle\oradata\Oracle9i\】也就是你要保存文件的路径存在
+
+/*分为四步 */
+
+--第1步：创建临时表空间
+
+create temporary tablespace MCYL_TEMP
+
+tempfile 'D:\ORACL\mcyl_temp.dbf' 
+
+size 50m  
+
+autoextend on  
+
+next 50m maxsize 20480m  
+
+extent management local;  
+
+ 
+
+--第2步：创建数据表空间
+
+create tablespace MCYL_DATA
+
+logging  
+
+datafile 'D:\ORACL\MCYL_DATA.dbf' 
+
+size 50m  
+
+autoextend on  
+
+next 50m maxsize 20480m  
+
+extent management local;  
+
+ 
+
+--第3步：创建用户并指定表空间
+
+create user MCYL identified by MCYL
+
+default tablespace MCYL_DATA
+
+temporary tablespace MCYL_TEMP;  
+
+ 
+
+--第4步：给用户授予权限
+
+grant connect,resource,dba to MCYL;  
